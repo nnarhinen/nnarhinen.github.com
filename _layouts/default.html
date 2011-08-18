@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>{{ page.title }}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC|Andika' rel='stylesheet' type='text/css' />
+	<style type="text/css">
+	body {
+		background-color: #ccc;
+		font-family: 'Andika', sans-serif;
+	}
+	#background-top {
+		background-color: #3399ff;
+		height: 300px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0;
+		z-index: -1;
+		-moz-box-shadow: 0px 5px 5px #444;
+		-webkit-box-shadow: 0px 5px 5px #444;
+		box-shadow: 0px 5px 5px #444;
+	}
+	#container {
+		width: 900px;
+		background-color: #fff;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+		padding: 20px;
+		-moz-box-shadow: 5px 5px 5px #444;
+		-webkit-box-shadow: 5px 5px 5px #444;
+		box-shadow: 5px 5px 5px #444;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		border: 1px solid #444;
+		overflow: auto;
+	}
+	#title {
+		font-family: 'Bowlby One SC', sans-serif;
+	}
+	#links {
+		float: right;
+	}
+	#info {
+		float: left;
+	}
+	#content {
+		width: 650px;
+		float: left;
+		clear: left;
+	}
+	#posts {
+		float: right;
+		width: 200px;
+	}
+	#comments {
+		float: left;
+		clear: left;
+	}
+	a img {
+		border: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="background-top">&nbsp;</div>
+	<div id="container">
+		<div id="links">
+			<a href="https://www.facebook.com/nnarhinen"><img src="/icons/facebook-32.png" alt="I'm on facebook" /></a>
+			<a href="https://www.twitter.com/nnarhinen"><img src="/icons/twitter-32.png" alt="I'm on twitter" /></a>
+			<a href="http://fi.linkedin.com/in/niklasnarhinen"><img src="/icons/linkedin-32.png" alt="I'm on linkedin" /></a>
+		</div>
+		<div id="info">
+			<h1 id="title">Niklas Närhinen</h1>
+			<p style="font-style: italic;">A developer with passion for software</p>
+		</div>
+		{{ content }}
+	</div>
+</body>
+</html>
