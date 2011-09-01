@@ -15,6 +15,7 @@ DOMDocument is maybe the most used method for XML handling and creation in PHP. 
 Here's a sample script I used for benchmarking:
 
 {% highlight php %}
+<?php
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -37,6 +38,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
+?>
 {% endhighlight %}
 
 This script was served via Apache and downloaded with wget.
@@ -54,6 +56,7 @@ XmlWriter is not that well known amongst PHP-developers. It’s basically a wrappe
 Here's a sample I wrote:
 
 {% highlight php %}
+<?php
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -79,6 +82,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
+?>
 {% endhighlight %}
 
 This script was as well served via Apache and requested with wget.
