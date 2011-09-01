@@ -51,7 +51,7 @@ Here are some stats:
 
 ## XmlWriter
 
-XmlWriter is not that well known amongst PHP-developers. It’s basically a wrapper for libxml’s xmlWriter API. With XmlWriter you can (in theory, at least) flush the contents to the output-pipe before you have even processed all data on your server. That way you can start processing the data clientside before the download is even complete. The processing and “editing” capabilities are a bit more limited than with DOMDocument, and you need to handle the document hierarchy yourself.
+XmlWriter is not that well known amongst PHP-developers. It's basically a wrapper for libxml's xmlWriter API. With XmlWriter you can (in theory, at least) flush the contents to the output-pipe before you have even processed all data on your server. That way you can start processing the data clientside before the download is even complete. The processing and 'editing' capabilities are a bit more limited than with DOMDocument, and you need to handle the document hierarchy yourself.
 
 Here's a sample I wrote:
 
@@ -95,4 +95,4 @@ Here’s some stats on XmlWriter performance:
 
 ## And the winner is: XmlWriter
 
-So to sum things up. If the capabilities XmlWriter offers are enough for you, you should definitely be using it. With one million “product” items, the times to process the data and get the contents to your client will be split in half comparing to DOMDocument. And what’s most important: you will be consuming only a fraction of the memory, which then leads to better performance and scalability.
+So to sum things up. If the capabilities XmlWriter offers are enough for you, you should definitely be using it. With one million 'product' items, the times to process the data and get the contents to your client will be split in half comparing to DOMDocument. And what's most important: you will be consuming only a fraction of the memory, which then leads to better performance and scalability.
