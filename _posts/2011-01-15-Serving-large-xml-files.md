@@ -87,7 +87,7 @@ echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
 
 This script was as well served via Apache and requested with wget.
 
-Here’s some stats on XmlWriter performance:
+Here are some stats on XmlWriter performance:
 
  * The average time to create the xml and output it, was somewhere near 16-20 seconds
  * Memory consumption average was somewhere between 500-700 kb
