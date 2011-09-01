@@ -177,7 +177,8 @@ namespace FluentNHibernateDataGridMappingTest.Model.Collection
     {
         public EcObservableCollection() : base()
         {
-            this.CollectionChanged += new NotifyCollectionChangedEventHandler(EcObservableCollection_CollectionChanged);		
+            this.CollectionChanged += 
+				new NotifyCollectionChangedEventHandler(EcObservableCollection_CollectionChanged);		
         }
 
         void EcObservableCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -196,14 +197,16 @@ namespace FluentNHibernateDataGridMappingTest.Model.Collection
 
         void item_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            EcObservableCollectionItemChangedEventArgs<T> args = new EcObservableCollectionItemChangedEventArgs<T>();
+            EcObservableCollectionItemChangedEventArgs<T> args = 
+				new EcObservableCollectionItemChangedEventArgs<T>();
             args.Item = (T)sender;
             ItemChanged(this, args);
         }
 
         public event EcObservableCollectionItemChangedEventHandler ItemChanged;
 
-        public delegate void EcObservableCollectionItemChangedEventHandler(object sender, EcObservableCollectionItemChangedEventArgs<T> args);
+        public delegate void EcObservableCollectionItemChangedEventHandler(object sender, 
+															EcObservableCollectionItemChangedEventArgs<T> args);
     }
 
     class EcObservableCollectionItemChangedEventArgs<T> : EventArgs
@@ -230,7 +233,13 @@ This code also demonstrates how you can make the row header to show the id of th
                 <Setter Property="Content" Value="{Binding Id}" />
             </Style>
         </Grid.Resources>
-        <DataGrid AutoGenerateColumns="False" Margin="12" Name="dataGrid1" AlternatingRowBackground="AliceBlue" RowHeaderStyle="{StaticResource RowHeadersWithId}" HeadersVisibility="All" CanUserAddRows="True">
+        <DataGrid AutoGenerateColumns="False" 
+					Margin="12" 
+					Name="dataGrid1" 
+					AlternatingRowBackground="AliceBlue" 
+					RowHeaderStyle="{StaticResource RowHeadersWithId}" 
+					HeadersVisibility="All" 
+					CanUserAddRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
                 <DataGridTextColumn Binding="{Binding Email}" Header="Email" />
@@ -375,8 +384,10 @@ namespace FluentNHibernateDataGridMappingTest
                 foreach (Customer c in criteria.List<Customer>())
                     customers.Add(new CustomerView(c));
             }
-            customers.CollectionChanged += new NotifyCollectionChangedEventHandler(customers_CollectionChanged);
-            customers.ItemChanged += new EcObservableCollection<CustomerView>.EcObservableCollectionItemChangedEventHandler(customers_ItemChanged);
+            customers.CollectionChanged += 
+				new NotifyCollectionChangedEventHandler(customers_CollectionChanged);
+            customers.ItemChanged += 
+				new EcObservableCollection<CustomerView>.EcObservableCollectionItemChangedEventHandler(customers_ItemChanged);
             dataGrid1.ItemsSource = customers;
         }
 
