@@ -430,6 +430,7 @@ namespace FluentNHibernateDataGridMappingTest
 So, with my code examples, it should be easy to figure out how to build quickly different views for your models. The observablecollection I created, is highly reusable, as it takes whatever modelviews you create, as long as they implement the INotifyPropertyChanged interface.
 
 In a nutshell, the steps needed to get two-way databinding with WPF and NHibernate to work together:
+
  * Write your Models with appropriate ModelViews
  * Map them to database
  * Write (or copy, or search with google) an appropriate Collection
