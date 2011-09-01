@@ -10,6 +10,7 @@ title: Streaming output with a callback in Agavi
 By default you would output XML like:
 
 {% highlight php %}
+<?php
 class Products_ListSuccessView extends MyProductsBaseView
 {
     
@@ -20,6 +21,7 @@ class Products_ListSuccessView extends MyProductsBaseView
         return $dom->saveXML();
     }
 }
+?>
 {% endhighlight %}
 
 Changing this according to my previous blog post about XML isn’t just replacing the DOMDocument with XmlWriter as AgaviWebResponse sends headers only after the view’s execute-method has completed.
@@ -27,6 +29,7 @@ Changing this according to my previous blog post about XML isn’t just replacin
 So I had to subclass AgaviWebResponse to support returning Closures from the view:
 
 {% highlight php %}
+<?php
 class MyWebResponse extends AgaviWebResponse
 {
     public function sendContent()
@@ -39,11 +42,13 @@ class MyWebResponse extends AgaviWebResponse
         parent::sendContent();
     }
 }
+?>
 {% endhighlight %}
 
 After adding the class to autoload.xml and factories.xml you can do the following:
 
 {% highlight php %}
+<?php
 class Products_ListSuccessView extends MyProductsBaseView
 {
     
@@ -57,6 +62,7 @@ class Products_ListSuccessView extends MyProductsBaseView
         };
     }
 }
+?>
 {% endhighlight %}
 
 Wasn’t that simple? :)
