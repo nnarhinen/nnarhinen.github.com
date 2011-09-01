@@ -1,7 +1,10 @@
 ---
 layout: post
-title: Creating and Serving large XML files: DOMDocument vs. XmlWriter
+title: Creating and Serving large XML files - DOMDocument vs. XmlWriter
 ---
+
+{{ page.title }}
+================
 
 Handling big amounts of data between a client application and a REST service can sometimes be tricky, especially when things should be responsive. I did a small benchmark between the built-in tools in PHP: DOMDocument and XmlReader.
 
@@ -9,10 +12,9 @@ Handling big amounts of data between a client application and a REST service can
 
 DOMDocument is maybe the most used method for XML handling and creation in PHP. The approach used in DOMDocument, is to load nodes into a DOM, which then can be queried and/or represented as a string.
 
-Here's a sample script I used for bencmarking:
+Here's a sample script I used for benchmarking:
 
-```php
-
+{% highlight php %}
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -35,8 +37,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
-
-```
+{% endhighlight %}
 
 This script was served via Apache and downloaded with wget.
 
@@ -52,8 +53,7 @@ XmlWriter is not that well known amongst PHP-developers. It’s basically a wrappe
 
 Here's a sample I wrote:
 
-```php
-
+{% highlight php %}
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -79,8 +79,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
-
-```
+{% endhighlight %}
 
 This script was as well served via Apache and requested with wget.
 
