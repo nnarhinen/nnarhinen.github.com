@@ -2,6 +2,7 @@
 layout: post
 title: Bind NHibernate objects to WPF DataGrid
 ---
+
 {{ page.title }}
 ================
 
@@ -44,7 +45,7 @@ namespace FluentNHibernateDataGridMappingTest.Model
         }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ### CustomerAddress
 
@@ -69,7 +70,7 @@ namespace FluentNHibernateDataGridMappingTest.Model
         public virtual Customer Customer { get; set; }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ## Part2: The ModelViews
 
@@ -152,7 +153,7 @@ namespace FluentNHibernateDataGridMappingTest.Model
         #endregion
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ## Part3: The Collection
 
@@ -210,7 +211,7 @@ namespace FluentNHibernateDataGridMappingTest.Model.Collection
         public T Item { get; set; }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ## Part4: The user interface
 
@@ -218,7 +219,7 @@ namespace FluentNHibernateDataGridMappingTest.Model.Collection
 
 This code also demonstrates how you can make the row header to show the id of the item.
 
-{% highlight xaml %}
+{% highlight xml %}
 <Window x:Class="FluentNHibernateDataGridMappingTest.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -238,7 +239,7 @@ This code also demonstrates how you can make the row header to show the id of th
         </DataGrid>
     </Grid>
 </Window>
-{% endhilight %}
+{% endhighlight %}
 
 ## Part5: Make it all work together
 
@@ -269,7 +270,7 @@ namespace FluentNHibernateDataGridMappingTest.Model.Mapping
         }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 #### CustomerAddressMap.cs
 
@@ -295,7 +296,7 @@ namespace FluentNHibernateDataGridMappingTest.Model.Mapping
         }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ### Database configuration: The Fluent NHibernate way
 
@@ -332,7 +333,7 @@ namespace FluentNHibernateDataGridMappingTest.Core
         }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ### The user interface initialization and data binding: MainWindow.xaml.cs
 
@@ -411,7 +412,7 @@ namespace FluentNHibernateDataGridMappingTest
         }
     }
 }
-{% endhilight %}
+{% endhighlight %}
 
 ## Conclusion
 
