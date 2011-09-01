@@ -4,11 +4,23 @@ title: Niklas Närhinen
 ---
 <div id="content">
 	<p>
-		<img src="/images/niklas_tammio.jpg" />
+		<img id="front-pic" src="/images/niklas_tammio.jpg" />
+	</p>
+	<p><h3>Contact me</h3>
+		<ul style="list-style: none;">
+			<li>By email: <a href="mailto:niklas@narhinen.net">niklas@narhinen.net</a></li>
+			<li>By phone: +358 44 539 9981</li>
+			<li>By skype: <a href="skype:narhni">narhni</a></li>
+		</ul>
+		You can also find me on 
+		<a href="https://github.com/nnarhinen">Github</a>,
+		<a href="https://www.facebook.com/nnarhinen">Facebook</a>,
+		<a href="https://www.twitter.com/nnarhinen">Twitter</a> and
+		<a href="http://fi.linkedin.com/in/niklasnarhinen">Linkedin</a>.
 	</p>
 </div>
 <div id="posts">
-	<h4>Latest blog posts</h4>
+	<h3>Latest blog posts</h3>
 	<ul class="posts">
 	{% for post in site.posts %}
 		<li><span>{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a></li>

@@ -1,10 +1,11 @@
 # Personal site of Niklas Närhinen
 
 ## License
+
 The following directories and their contents are Copyright Niklas Närhinen. You may not reuse anything therein without my permission:
 
-_posts/
-images/
+    _posts/
+    images/
 
 The icons/ directory contains social media icons from http://todayinart.com/2011/01/06/16-clean-social-media-icons/
 
