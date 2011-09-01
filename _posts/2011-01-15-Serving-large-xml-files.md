@@ -9,9 +9,10 @@ Handling big amounts of data between a client application and a REST service can
 
 DOMDocument is maybe the most used method for XML handling and creation in PHP. The approach used in DOMDocument, is to load nodes into a DOM, which then can be queried and/or represented as a string.
 
-Here’s a sample script I used for bencmarking:
+Here's a sample script I used for bencmarking:
 
 ```php
+
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -34,6 +35,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
+
 ```
 
 This script was served via Apache and downloaded with wget.
@@ -48,9 +50,10 @@ Here are some stats:
 
 XmlWriter is not that well known amongst PHP-developers. It’s basically a wrapper for libxml’s xmlWriter API. With XmlWriter you can (in theory, at least) flush the contents to the output-pipe before you have even processed all data on your server. That way you can start processing the data clientside before the download is even complete. The processing and “editing” capabilities are a bit more limited than with DOMDocument, and you need to handle the document hierarchy yourself.
 
-Here’s a sample I wrote:
+Here's a sample I wrote:
 
 ```php
+
 $start = microtime(true);
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -76,6 +79,7 @@ echo "Start: " . $start . PHP_EOL;
 echo "Stop: " . $stop . PHP_EOL;
 echo "Seconds: " . $seconds . PHP_EOL;
 echo "Memory peak: " . memory_get_peak_usage() / 1048576 . 'MB' . PHP_EOL;
+
 ```
 
 This script was as well served via Apache and requested with wget.
