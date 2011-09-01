@@ -43,7 +43,7 @@ class MyWebResponse extends AgaviWebResponse
 
 After adding the class to autoload.xml and factories.xml you can do the following:
 
-{% highlight %}
+{% highlight php %}
 class Products_ListSuccessView extends MyProductsBaseView
 {
     
