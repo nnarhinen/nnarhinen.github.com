@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+	<channel>
+		<title>Niklas Närhinen - blog</title>
+		<link>http://narhinen.net</link>
+		<description>The blog of Niklas Närhinen</description>
+		<lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+        <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+		{% for post in site.posts %}
+		<item>
+			<title>{{ post.title }}</title>
+			<link>http://narhinen.net{{ post.url }}</link>
+			<description>{{ post.content | xml_escape }}</description>
+			<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+			<guid>http://narhinen.net{{ post.id }}</guid>
+		{% endfor %}
+	</channel>
+</rss>
