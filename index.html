@@ -19,11 +19,36 @@ title: Niklas Närhinen
 		<a href="http://fi.linkedin.com/in/niklasnarhinen">Linkedin</a>.
 	</p>
 </div>
-<div id="posts">
-	<h3>Latest blog posts</h3>
-	<ul class="posts">
-	{% for post in site.posts %}
-		<li><span>{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-	</ul>
+<div id="tabs">
+	<div class="tabs">
+		<ul>
+			<li id="tabHeader_blog">Blog</li>
+			<li id="tabHeader_about">About</li>
+		</ul>
+	</div>
+	<div class="tabscontent">
+		<div class="tabpage" id="tabpage_blog">
+			<h3>Latest blog posts</h3>
+			<ul class="posts">
+				{% for post in site.posts %}
+				<li><span>{{ post.date | date_to_string }}</span><br /><a href="{{ post.url }}">{{ post.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="tabpage" id="tabpage_about">
+			<h3>About me</h4>
+			<p>My name is Niklas Närhinen and I love to code. I love to start new projects and try out new stuff.</p>
+			<p>I make my living by coding PHP web applications and .NET windows stuff for <a href="http://www.ecom.fi">Ecom</a>.</p>
+			<p>I have also some experience in developing native mobile apps for Android and iOS. Lately I have been playing around with Node.JS.</p>
+			<p>I love open source and I've been contributing to <a href="http://www.propelorm.org">Propel ORM</a>.</p>
+			<p>I have been organizing <a href="http://www.turkuagileday.fi">Turku Agile Day conference</a> for a few years now.</p>
+		</div>
+	</div>
 </div>
+
+<script type="text/javascript" src="/scripts/tabs.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#tabs').acidTabs();
+});
+</script>
