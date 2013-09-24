@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html>
 <head>
 	<title>{{ page.title }}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
 	<link rel="stylesheet" href="/style/syntax.css" type="text/css" />
 	<link rel="stylesheet" href="/style/tabs.css" type="text/css" />
 	<link rel="alternate" type="application/rss+xml" title="Niklas Närhinen - Blog - RSS" href="http://narhinen.net/feed.rss" />
@@ -76,7 +76,8 @@
 		float: right;
 		width: 400px;
 	}
-	#disqus_thread {
+  .moot {
+    width: 100%;
 		float: left;
 		clear: left;
 	}
@@ -89,7 +90,9 @@
 		padding-left: 0px;
 	}
 	</style>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="//cdn.moot.it/1/moot.min.js"></script>
+
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
